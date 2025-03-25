@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: poppins;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -14,23 +14,26 @@ body {
   padding: 20px;
 }
 
+/* Container */
 .container {
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   padding: 40px;
   text-align: center;
 }
 
+/* Headings */
 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #2c3e50;
   font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font */
 }
 
+/* Color Inputs */
 .color-inputs {
   display: flex;
   justify-content: center;
@@ -43,7 +46,8 @@ h2 {
   cursor: pointer;
   border: none;
   outline: none;
-  transition: transform 0.2s ease;
+  width: 80px;
+  height: 50px;
 }
 
 .color-inputs input[type="color"]:hover {
@@ -58,43 +62,50 @@ h2 {
   border: none;
 }
 
+/* Gradient Direction Options */
+.direction-options {
+  margin-top: 10px;
+}
+
+.direction-options label:hover {
+  background-color: #e6e9f0;
+}
+
 .direction-options .top,
 .bottom {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  line-height: 1rem;
-}
-
-.direction-options p {
-  margin-bottom: 15px;
-  color: #7f8c8d;
-  font-weight: 500;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
 }
 
 .direction-options label {
   display: block;
-  margin-bottom: 10px;
-  color: #2c3e50;
   cursor: pointer;
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  background-color: #f1f2f6;
+  color: #2f3542;
+  font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font */
 }
 
 .direction-options input[type="radio"] {
-  margin-right: 10px;
-  accent-color: #3498db;
+  display: none;
 }
 
+/* Gradient Code Display */
 #gradientCode {
   background-color: #f1f2f6;
   color: #2f3542;
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin-top: 20px;
   user-select: all;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 1rem); /* Responsive font */
   letter-spacing: 0.5px;
 }
 
+/* Responsive Styles for Small Screens */
 @media screen and (max-width: 480px) {
   .container {
     padding: 25px;
@@ -110,11 +121,15 @@ h2 {
     height: 50px;
   }
 
+  .direction-options label {
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Adjusted for smaller screens */
+  }
+
   .direction-options .top,
   .bottom {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
   }
 }

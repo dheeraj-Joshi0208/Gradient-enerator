@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gradient Background Generator</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Gradient Background Generator</title>
-</head>
+  <body>
+    <div class="container">
+      <h2>Gradient Background Generator</h2>
 
-<body>
-  <div class="container">
-    <h2>Gradient Background Generator</h2>
+      <div class="color-inputs">
+        <input type="color" id="color1" value="#ff7e5f" />
+        <input type="color" id="color2" value="#feb47b" />
+      </div>
 
-    <div class="color-inputs">
-      <input type="color" id="color1" value="#ff7e5f">
-      <input type="color" id="color2" value="#feb47b">
+      <div class="direction-options">
+        <div class="top">
+          <label
+            ><input
+              type="radio"
+              name="gradientDirection"
+              id="to-right"
+              value="to right"
+            />
+            Right to Left</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="gradientDirection"
+              id="to-left"
+              value="to left"
+            />
+            Left to Right</label
+          >
+        </div>
+        <div class="bottom">
+          <label
+            ><input
+              type="radio"
+              name="gradientDirection"
+              id="to-top"
+              value="to top"
+            />
+            Top to Bottom</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="gradientDirection"
+              id="to-bottom"
+              value="to bottom"
+            />
+            Bottom to Top</label
+          >
+        </div>
+      </div>
+
+      <p id="gradientCode">linear-gradient(to right, #ff7e5f, #feb47b);</p>
     </div>
 
-    <div class="direction-options">
-      <div class="top">
-        <label><input type="radio" name="gradientDirection" id="to-right" value="to right" checked> Right to
-          Left</label>
-        <label><input type="radio" name="gradientDirection" id="to-left" value="to left"> Left to Right</label>
-      </div>
-      <div class="bottom">
-        <label><input type="radio" name="gradientDirection" id="to-top"="to top"> Top to Bottom</label>
-        <label><input type="radio" name="gradientDirection" id="to-bottom" value="to bottom"> Bottom to Top</label>
-      </div>
-    </div>
-
-    <p id="gradientCode">linear-gradient(to right, #ff7e5f, #feb47b);</p>
-  </div>
-
-  <script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
