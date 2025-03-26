@@ -33,3 +33,22 @@ directionInputs.forEach((input) =>
 
 // Initial gradient update on page load
 generateGradient();
+
+function copyText() {
+  let textElement = document.getElementById("gradientCode");
+
+  /* Create a temporary input field */
+  let tempInput = document.createElement("input");
+  tempInput.value = textElement.innerText;
+  document.body.appendChild(tempInput);
+
+  /* Select and copy text */
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(tempInput.value);
+
+  /* Remove the temporary input */
+  document.body.removeChild(tempInput);
+
+  alert("Copied to clipboard!");
+}
